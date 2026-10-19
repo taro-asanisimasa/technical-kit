@@ -1,0 +1,15 @@
+.DS_Store
+Thumbs.db
+__pycache__/
+*.py[cod]
+.env
+.env.*
+*.pem
+*.key
+auth.json
+credentials.json
+.claude/settings*.json
+.codex/
+work/
+outputs/
+*.zip
