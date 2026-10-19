@@ -1,0 +1,20 @@
+{
+  "title": "Example processing flow",
+  "layout": {
+    "font_size": 18,
+    "font_family": "sans-serif",
+    "route_spacing": 26
+  },
+  "nodes": [
+    {"id": "input", "label": "Input", "row": 0, "col": 0, "role": "external", "evidence": "Fictional example."},
+    {"id": "process", "label": "Processing", "row": 0, "col": 1, "role": "process", "evidence": "Fictional example."},
+    {"id": "store", "label": "Store result", "row": 0, "col": 2, "role": "storage", "evidence": "Fictional example."},
+    {"id": "output", "label": "Output result", "row": 1, "col": 2, "role": "external", "evidence": "Fictional example."}
+  ],
+  "edges": [
+    {"id": "receive", "source": "input", "target": "process", "owner": "Input flow", "label": "Receive", "evidence": "Fictional example."},
+    {"id": "save", "source": "process", "target": "store", "source_port": "right", "target_port": "left", "owner": "Result flow", "label": "Save", "bundle": true, "evidence": "Fictional example; the shared line is a layout aid, not a physical component."},
+    {"id": "deliver", "source": "process", "target": "output", "source_port": "right", "target_port": "left", "owner": "Result flow", "label": "Deliver", "bundle": true, "evidence": "Fictional example; the shared line is a layout aid, not a physical component."}
+  ],
+  "legend": true
+}

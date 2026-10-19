@@ -1,0 +1,17 @@
+{
+  "title": "Example nested processing flow",
+  "groups": [
+    {"id": "boundary", "label": "Processing boundary", "row": 0, "col": 0},
+    {"id": "worker", "label": "Processing group", "parent": "boundary", "row": 0, "col": 1}
+  ],
+  "nodes": [
+    {"id": "input", "label": "Input", "parent": "boundary", "row": 0, "col": 0, "role": "external"},
+    {"id": "process", "label": "Processing", "parent": "worker", "row": 0, "col": 0, "role": "process"},
+    {"id": "store", "label": "Stored result", "parent": "worker", "row": 1, "col": 0, "role": "storage"}
+  ],
+  "edges": [
+    {"id": "receive", "source": "input", "target": "process", "owner": "Input flow"},
+    {"id": "save", "source": "process", "target": "store", "owner": "Result flow"}
+  ],
+  "legend": true
+}

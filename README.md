@@ -4,8 +4,8 @@
 文書の品質には `layered-docs`、図の作成には `drawio-diagrams` を使います。
 設計書、出力形式、複雑な図の補足は必要な場合だけ読みます。
 
-このキットは指示書とテンプレートです。
-文書ファイルを生成するプログラム、画像の描画器、モデル、外部サービスとの接続機能は同梱していません。
+指示書とテンプレートに加え、draw.io用の座標計算・検査・簡易プレビュー・編集データ抽出のPythonスクリプトを含みます。
+モデル、Word等の文書生成エンジン、draw.io本体、外部サービスとの接続機能は同梱していません。
 利用するAIや編集環境の機能と権限の範囲で使います。
 
 ## 2つのSkillと必要時の参照
@@ -13,7 +13,7 @@
 | 入口 | 担当すること | 必要な場合に読む参照 |
 |---|---|---|
 | `layered-docs` | 読む深さに応じた構成、重要条件と根拠の保持、必要な範囲での修正・レビュー | 設計書の冒頭と対応表、出力形式ごとの確認 |
-| `drawio-diagrams` | 根拠に基づく図、編集データ、構造と描画の確認 | 複雑な図の配置、レイヤー、密度、テンプレートの再利用 |
+| `drawio-diagrams` | 根拠に基づく図、配置計算、配線、編集データ、構造と描画の確認 | 複雑な図の配置、ツールの入力形式と使い方 |
 
 ```text
 skills/
@@ -24,10 +24,22 @@ skills/
       output-formats.md
   drawio-diagrams/
     SKILL.md
-    references/layout-and-review.md
+    references/
+      layout-and-review.md
+      tools.md
+    scripts/
+      generate.py
+      geometry.py
+      diagram_io.py
+      check.py
+      preview.py
+      export.py
+    tests/test_tools.py
     assets/
       basic-flow.drawio
       architecture-template.drawio
+      example-diagram.json
+      example-nested.json
 integrations/
   claude-code/CLAUDE.md.example
   codex/AGENTS.md.example
@@ -48,6 +60,14 @@ NOTICE.md
 
 図のSkillは、実際の関係の確認、目的に応じたテンプレートの複製、編集データの保持、構造検査と描画確認を扱います。
 組織やプロジェクト固有の文書契約、命名、保存先、既存テンプレートは、対象側の規約を優先します。
+
+補助スクリプトはPython 3.10以上の標準ライブラリだけで動きます。
+新規の反復配置はJSONから生成でき、入れ子の座標、接続位置、直交配線を共通の計算で扱います。
+簡易プレビューは外部viewerやサーバーを使いません。PNGの本来の描画には、別途信頼できるdraw.io Desktopが必要です。
+使い方と制約は [作図補助ツール](skills/drawio-diagrams/references/tools.md) を参照してください。
+
+新規単発図では、編集データ入りPNGを正本の既定とし、更新は最新の編集データから始めます。
+継続生成する図では入力・コードを正本にできます。既存図の方式を優先し、古い生成入力でGUI編集を消さないようにします。
 
 Word、PDF、スライド等を出力する場合は、その環境にある出力機能を使います。
 利用できない形式については制約を伝え、利用者が選んだ代替形式で進めます。
@@ -131,7 +151,7 @@ draw.ioのXML検査は、文字の収まりや描画の正しさの確認とは�
 
 ## 公開と利用条件
 
-このキットの文章とテンプレートはCC0 1.0 Universalで提供します。
+このキットの文章、テンプレート、サンプルデータ、スクリプト、テストはCC0 1.0 Universalで提供します。
 標準の条件全文は [LICENSE](LICENSE)、適用対象は [NOTICE.md](NOTICE.md) にあります。
 入力する資料や、このキットを使って作る成果物の利用条件を、自動的にCC0へ変更するものではありません。
 
