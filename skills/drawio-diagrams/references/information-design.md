@@ -59,3 +59,20 @@ draw.io内部のレイヤーは編集を助けるために任意で使う。レ�
 | [Hegarty, Canham & Fabrikant, 2010](https://www.ovid.com/journals/jeplm/pdf/00004786-201001000-00021~thinking-about-the-weather-how-display-salience-and)、[Hegarty, 2011, 総説](https://mechanism.ucsd.edu/bill/teaching/F12/cs200/Readings/hegarty.thecognitivescienceofvisua-spatialdisplays.implicationsfordesign.2011.pdf) | 課題に必要な情報を目立たせても、読み方を知る前は成績が変わらず、知った後にだけ向上した。視線は主に読者の課題と知識で決まる。天気図での推論課題 | 焦点の近くに、そこを見る理由を1文で添える。焦点のない参照用の図に強調を無理に作らない | 研究 |
 | [NN/g の F 字型の読み方](https://nngroup.com/articles/f-shaped-pattern-reading-web-content/)（本文は未読、要約で確認） | 文章が中心のWebページで、構造の手がかりがないときの読み方の型。図の読み方の研究ではない。Z字型はこの研究に含まれない | F字型やZ字型で図を組まない。参考にするのは、左上から読み始めることだけ | 研究（文章） |
 | [Duarte の Glance Test](https://www.duarte.com/resources/guides-tools/the-glance-test/)、Knaflic『Storytelling with Data』 | 短時間で主張が読み取れるかを確かめる。全体を灰色にして1か所だけ色を付け、人に最初に見た場所を尋ねる | 意図した答えを伝えない確認の3つの問い | 実務 |
+
+## アイコンの使い方を決める根拠
+
+`SKILL.md` の「アイコンは種類を示す札として使う」の根拠を示す。種別は上の表と同じ。
+要約や二次資料で確認したものは、原著の数値と食い違う可能性がある。
+
+| 根拠 | 示される知見と限界 | このキットでの応用 | 種別 |
+|---|---|---|---|
+| [McDougall, Curry & de Bruijn, 1999](https://eprints.bournemouth.ac.uk/10165/1/Measuring_symbol_and_icon_characteristics_mcdougall__curry_%26_debruijn_1999.pdf)、[McDougall, de Bruijn & Curry, 2000](https://doi.org/10.1037/1076-898X.6.4.291)（要約で確認） | 記号を具象性、複雑さ、意味の分かりやすさ、親しみ、意味の距離で測る枠組み。具象であることの利点は初見に限られ練習で消える一方、複雑さの不利は長く残る。UIのアイコンでの課題 | 線の少ない単純な形を選ぶ。種類どうしは形も意味も離す | 研究 |
+| [Isherwood, McDougall & Curry, 2007](https://qastaffprofiles.bournemouth.ac.uk/display/journal-article/11106)（要約で確認） | 初見では絵と意味の距離が、慣れた後は親しみが、アイコンを理解する速さを左右する | 読者が見慣れた慣例の記号を、独自の記号より優先する。初見の読者向けには意味の近さを重視する | 研究 |
+| Wiedenbeck, 1999（BIT 18(2)。本文は未取得、[二次資料](https://uxmyths.com/post/715009009/myth-icons-enhance-usability)で確認） | ラベル付きのアイコンが、習得の速さと使いやすさの評価で最もよかった。アイコンだけでは探索が速くならなかった | アイコンは必ず文字のラベルと組にする | 研究 |
+| Bertin『図の記号学』（[解説](https://axismaps.com/guide/visual-variables)） | 形の違いは同じか違うかを伝えるが、同じ形の群を瞬時に拾い出させる力は弱い | 種類の群は配置で見せ、アイコンは読んだときの意味の理解を助ける役にする | 理論 |
+| [Harp & Mayer, 1998](https://en.wikipedia.org/wiki/Seductive_details)、[Rey, 2012, メタ分析](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8442593/)（要約で確認、効果量は資料により異なる） | 興味を引くが本題と関係のない絵や話は、想起と応用の成績を下げる。視覚的なものほど影響が強い | 意味を担わない装飾のアイコンは置かない | 研究 |
+| [Carney & Levin, 2002](https://bearworks.missouristate.edu/articles-chhs/956)（要約で確認） | 装飾の挿絵は学習を高めず、内容を表す、整理する、解釈を助ける挿絵は高める | アイコンは、箱が何かを表す役割だけに使う | 研究 |
+| [Moody, 2009, Physics of Notations](https://bibbase.org/network/publication/moody-thephysicsofnotationstowardascientificbasisforconstructingvisualnotationsinsoftwareengineering)（要約で確認） | 記法の原則として、意味が透けて見えること、見分けやすいこと、1つの記号に複数の意味を、1つの意味に複数の記号を持たせないことを挙げる。検証が不足しているという批判がある | 1つの種類に1つの記号を対応させる | 理論 |
+| NN/g, Harley, 2014, Icon Usability（本文は未取得、二次資料で確認） | 誰にでも通じるアイコンはホーム、印刷、検索など一部に限られ、それ以外には文字のラベルが必要になる | 慣例の記号がない概念にアイコンを作らない | 実務 |
+| [ISO 9186-1](https://webstore.ansi.org/preview-pages/ISO/preview_ISO+9186-1-2014.pdf)（プレビューで確認、合格の基準値は未確認） | 図記号の理解度を、ラベルなしで見せて意味を答えさせる方法で試す | アイコンだけを見せて、何の種類かを答えさせる確認 | 規格 |
