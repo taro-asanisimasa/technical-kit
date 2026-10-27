@@ -43,3 +43,19 @@ Palmerの[原著全文](https://e-edu.nbu.bg/mod/resource/view.php?id=598321&lan
 
 draw.io内部のレイヤーは編集を助けるために任意で使う。レイヤー数と、読者が読み分ける視覚的な層の数は一致させなくてよい。
 既存図の限定修正では、依頼範囲を保ち、この方針に合わせるだけの再構成を追加しない。
+
+## 視線の順と強調の数を決める根拠
+
+`SKILL.md` の「描く前に、主張と視線の順を決める」の根拠を示す。種別は、研究が実験やメタ分析、実務が実務家の経験則を表す。
+焦点を1つ、色相を灰のほかに2つまで、強さを3段とする既定値は、以下の研究から導いたこのキットの制作方針であり、数値そのものが実証されたわけではない。
+
+| 根拠 | 示される知見と限界 | このキットでの応用 | 種別 |
+|---|---|---|---|
+| [Treisman & Gelade, 1980, 特徴統合理論](https://en.wikipedia.org/wiki/Feature_integration_theory)（原著は未読、要約で確認） | 1つの特徴だけで周囲と異なる要素は、周囲の数が増えても見つけるまでの時間が伸びにくい。2つの特徴の組合せで初めて区別できる要素は、1つずつ探す必要がある。単純な刺激での実験 | 焦点は図全体で色相が唯一になるようにし、特徴の組合せで区別させない | 研究 |
+| [Wolfe, 2021, Guided Search 6.0](https://search.bwh.harvard.edu/new/pubs/Wolfe2021_GS6.pdf) | 注意は、目標、目立ち、履歴、報酬、場面の意味を合わせた優先度の高い場所へ向く。目標と周囲の差が大きく、周囲どうしが似ているほど誘導が強い。目立ちの効果は一過性 | 強調を1つに絞り、ほかは揃えて控えめにする。読者の目的に強調を合わせる | 研究 |
+| [Haroz & Whitney, 2012](https://whitneylab.berkeley.edu/PDFs/Haroz_Whitney_2012_InfoVis.pdf) | 色の種類が増えると、異なる要素に気づく成績が下がる。既知の目標を探す成績は下がりにくい。同じ色を空間的にまとめると回復する。格子状の刺激での実験 | 色相の数を図全体で減らす。凡例を頼りに探す図では、色による分類を使ってよい | 研究 |
+| [Strobelt ほか, 2016, テキスト強調手法の比較](https://vcg.seas.harvard.edu/publications/20160101-guidelines-for-effective-usage-of-text-highlighting-techniques) | 単独の強調手法の成績は、文字の大きさ0.86、枠線0.84、背景色0.78、赤文字0.76、太字0.74の順で、斜体は0.15だった。文中の語を探す課題での比較 | 強調には大きさや枠の太さを先に使う。すべての箱を太字にしない | 研究 |
+| [Schneider ほか, 2018, 強調のメタ分析](https://www.clearinghouse.edu.tum.de/wp-content/uploads/2018/12/CHU_KR-22_-Schneider_2017_Lernmaterial_Hervorhebungen.pdf)（公式要約で確認、原著は未読） | 103研究・12,201人の分析で、強調は記憶（g = 0.53）と転移（g = 0.33）に効いた。図の中では色による強調が効き、矢印やラベルを足すだけの手がかりには明確な効果が見られなかった。点滅は逆効果だった。学習教材での結果 | 焦点は色で塗る。矢印を足すだけで視線を導いたことにしない | 研究 |
+| [Hegarty, Canham & Fabrikant, 2010](https://www.ovid.com/journals/jeplm/pdf/00004786-201001000-00021~thinking-about-the-weather-how-display-salience-and)、[Hegarty, 2011, 総説](https://mechanism.ucsd.edu/bill/teaching/F12/cs200/Readings/hegarty.thecognitivescienceofvisua-spatialdisplays.implicationsfordesign.2011.pdf) | 課題に必要な情報を目立たせても、読み方を知る前は成績が変わらず、知った後にだけ向上した。視線は主に読者の課題と知識で決まる。天気図での推論課題 | 焦点の近くに、そこを見る理由を1文で添える。焦点のない参照用の図に強調を無理に作らない | 研究 |
+| [NN/g の F 字型の読み方](https://nngroup.com/articles/f-shaped-pattern-reading-web-content/)（本文は未読、要約で確認） | 文章が中心のWebページで、構造の手がかりがないときの読み方の型。図の読み方の研究ではない。Z字型はこの研究に含まれない | F字型やZ字型で図を組まない。参考にするのは、左上から読み始めることだけ | 研究（文章） |
+| [Duarte の Glance Test](https://www.duarte.com/resources/guides-tools/the-glance-test/)、Knaflic『Storytelling with Data』 | 短時間で主張が読み取れるかを確かめる。全体を灰色にして1か所だけ色を付け、人に最初に見た場所を尋ねる | 意図した答えを伝えない確認の3つの問い | 実務 |
