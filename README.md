@@ -13,7 +13,7 @@
 | 入口 | 担当すること | 必要な場合に読む参照 |
 |---|---|---|
 | `layered-docs` | 読む深さに応じた構成、重要条件と根拠の保持、必要な範囲での修正・レビュー | 設計書の冒頭と対応表、出力形式ごとの確認 |
-| `drawio-diagrams` | 根拠に基づく図、配置計算、配線、編集データ、構造と描画の確認 | 複雑な図の配置、ツールの入力形式と使い方 |
+| `drawio-diagrams` | 根拠に基づく図、配置と視覚的な層、配線、編集データ、構造と描画の確認 | 複雑な図の配置、情報設計の根拠、ツールの入力形式と使い方 |
 
 ```text
 skills/
@@ -26,6 +26,7 @@ skills/
     SKILL.md
     references/
       layout-and-review.md
+      information-design.md
       tools.md
     scripts/
       generate.py
@@ -43,7 +44,9 @@ skills/
 integrations/
   claude-code/CLAUDE.md.example
   codex/AGENTS.md.example
-docs/PUBLICATION.md
+docs/
+  PUBLICATION.md
+  drawio-prompt.md
 LICENSE
 NOTICE.md
 ```
@@ -59,6 +62,9 @@ NOTICE.md
 短いチャット返答やコードだけの変更には、文書の型を強制しません。
 
 図のSkillは、実際の関係の確認、目的に応じたテンプレートの複製、編集データの保持、構造検査と描画確認を扱います。
+位置・余白・暗黙のグルーピングと所属の入れ子を使い、構造の上に今回の経路・処理・差分を重ねる表現を基本案にします。
+見え方は原則2層程度とし、単純な図や限定修正には層数を満たす追加をしません。draw.io内部のレイヤー機能の使用や数は任意です。
+方針と研究上の根拠・限界は [情報設計の根拠と適用例](skills/drawio-diagrams/references/information-design.md) を参照してください。
 組織やプロジェクト固有の文書契約、命名、保存先、既存テンプレートは、対象側の規約を優先します。
 
 補助スクリプトはPython 3.10以上の標準ライブラリだけで動きます。
@@ -110,6 +116,9 @@ Desktopアプリからローカルの配置を使う場合は、ローカル実�
 差分を比較し、設計書・出力形式の補足など、必要な追加だけを取り込めます。
 
 ## AIに配置を任せる場合
+
+Skillの読込に対応しないAIへ作図を依頼する場合は、[他のAIへ渡す作図プロンプト](docs/drawio-prompt.md)を使えます。
+対象資料や既存図を指定し、本文を渡してください。
 
 展開したフォルダを読み取れる状態にし、導入対象を指定します。
 
