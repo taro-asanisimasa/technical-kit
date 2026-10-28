@@ -27,6 +27,7 @@ skills/
     references/
       layout-and-review.md
       information-design.md
+      visual-style.md
       tools.md
     scripts/
       generate.py
@@ -47,6 +48,8 @@ integrations/
 docs/
   PUBLICATION.md
   drawio-prompt.md
+  visual-design-prompt.md
+  visual-design-research.md
 LICENSE
 NOTICE.md
 ```
@@ -66,6 +69,11 @@ NOTICE.md
 見え方は原則2層程度とし、単純な図や限定修正には層数を満たす追加をしません。draw.io内部のレイヤー機能の使用や数は任意です。
 方針と研究上の根拠・限界は [情報設計の根拠と適用例](skills/drawio-diagrams/references/information-design.md) を参照してください。
 組織やプロジェクト固有の文書契約、命名、保存先、既存テンプレートは、対象側の規約を優先します。
+
+余白・線幅・色・文字は、役割と値を対応させて揃えます。
+draw.ioで新しい見た目を決める場合は[見た目の値と役割](skills/drawio-diagrams/references/visual-style.md)を参照します。
+図・表・HTML/CSS・SVG・スライドへ渡せる[共通プロンプト](docs/visual-design-prompt.md)と、先行研究・デザインシステム・LLM公式情報の[調査資料](docs/visual-design-research.md)も収録しています。
+具体値は用途別の初期設定であり、全媒体へ同じ値を強制しません。共通プロンプトは追加のSkillや描画機能ではなく、生成スクリプトの配色・設定を自動変更するものでもありません。
 
 補助スクリプトはPython 3.10以上の標準ライブラリだけで動きます。
 新規の反復配置はJSONから生成でき、入れ子の座標、接続位置、直交配線を共通の計算で扱います。
